@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bass Line Lab | Ran Levi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.queue=[];n.version='2.0';
+    n.queue.push(['setPixelId','1922108691867647']);
+    n.loaded=!0;n.version='2.0';
+    n.queue.push(['track','PageView']);t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbq.js');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1922108691867647&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0J701CP2T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S0J701CP2T');
+
+    // Track product view
+    fbq('track', 'ViewContent', {
+      value: '67.00',
+      currency: 'USD',
+      content_name: 'Bass Line Lab',
+    });
+
+    gtag('event', 'view_item', {
+      items: [{
+        item_id: 'bass-line-lab',
+        item_name: 'Bass Line Lab',
+        price: 67.00,
+        quantity: 1
+      }]
+    });
+  </script>
+  <!-- End Google Analytics 4 -->
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --white: #FFFFFF;
+      --off-white: #F2F1EF;
+      --black: #0D0D0D;
+      --text: #1A1A1A;
+      --grey: #8A8A8A;
+      --border: #E0E0E0;
+      --border-dark: rgba(255,255,255,0.08);
+      --blue: #3B5BFF;
+      --blue-dark: #2A44E0;
+      --red: #FF4400;
+      --red-dark: #E03A00;
+      --yellow: #FFD600;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--text);
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; }
+
+    .label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--grey);
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      position: relative;
+      background: var(--black);
+      overflow: hidden;
+      min-height: 580px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('hero-playing1.png') center center / cover no-repeat;
+      filter: brightness(0.78);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.88) 35%, rgba(0,0,0,0.5) 62%, rgba(0,0,0,0.1) 100%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 80px 64px;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .hero-copy { max-width: 560px; }
+
+    .hero-tagline {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(36px, 4.5vw, 52px);
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -1.5px;
+      color: var(--white);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero-tagline .accent { color: var(--yellow); }
+
+    .hero-sub {
+      font-size: clamp(17px, 1.8vw, 20px);
+      color: rgba(255,255,255,0.78);
+      line-height: 1.65;
+      margin-bottom: 3px;
+      max-width: 480px;
+    }
+
+    .hero-sub:last-of-type { margin-bottom: 0; }
+
+    .hero-btn {
+      display: inline-block;
+      margin-top: 36px;
+      padding: 18px 44px;
+      background: var(--red);
+      color: #fff;
+      border-radius: 2px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      transition: background 0.18s;
+    }
+
+    .hero-btn:hover { background: var(--red-dark); }
+
+    .hero-bridge {
+      margin-top: 16px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+    }
+
+    /* ============ OUTCOMES ============ */
+    .outcomes-section {
+      background: var(--black);
+      padding: 80px 64px;
+    }
+
+    .outcomes-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .outcomes-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 40px;
+    }
+
+    .outcomes-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .outcomes-list li {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-dark);
+      display: flex;
+      gap: 40px;
+    }
+
+    .outcomes-list li:first-child { border-top: 1px solid var(--border-dark); }
+
+    .outcome-stop, .outcome-start {
+      flex: 1;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      font-size: clamp(15px, 1.7vw, 18px);
+      line-height: 1.55;
+    }
+
+    .outcome-stop { color: rgba(255,255,255,0.5); }
+
+    .outcome-start {
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .x-mark {
+      color: var(--red);
+      font-weight: 700;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+
+    .v-mark {
+      color: var(--blue);
+      font-weight: 700;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+
+    .outcome-closer {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(22px, 2.5vw, 32px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--yellow);
+      padding-top: 36px;
+      display: block;
+      letter-spacing: -0.5px;
+    }
+
+    /* ============ WHAT'S INSIDE ============ */
+    .inside-section {
+      background: var(--off-white);
+      padding: 88px 64px;
+    }
+
+    .inside-content {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .inside-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--black);
+      letter-spacing: -1.5px;
+      line-height: 1;
+      margin-bottom: 0;
+    }
+
+    .inside-headline-line {
+      display: block;
+      width: 48px;
+      height: 4px;
+      background: var(--blue);
+      margin: 16px 0 48px;
+    }
+
+    /* Course mockup */
+    .course-mockup {
+      display: flex;
+      background: #111;
+      margin-bottom: 48px;
+      min-height: 260px;
+    }
+
+    .mockup-player {
+      flex: 0 0 40%;
+      background: #0A0A0A;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 40px;
+    }
+
+    .mockup-play-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .mockup-play-btn::after {
+      content: '';
+      border-style: solid;
+      border-width: 10px 0 10px 18px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 4px;
+    }
+
+    .mockup-player-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-align: center;
+    }
+
+    .mockup-track {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mockup-workshop {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 13px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      flex: 1;
+    }
+
+    .mockup-workshop.active { background: rgba(59,91,255,0.08); }
+
+    .ws-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 1px;
+      flex-shrink: 0;
+      width: 22px;
+    }
+
+    .mockup-workshop.active .ws-num { color: var(--blue); }
+
+    .ws-title {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      flex: 1;
+    }
+
+    .mockup-workshop.active .ws-title { color: rgba(255,255,255,0.85); }
+
+    .ws-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+
+    /* Feature boxes */
+
+    /* Value card */
+    .value-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      overflow: hidden;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .value-card-header {
+      padding: 20px 32px;
+      background: var(--white);
+      text-align: center;
+    }
+
+    .value-card-header-label { display: none; }
+
+    .value-card-header-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--black);
+      letter-spacing: 2px;
+    }
+
+    .value-rows {
+      list-style: none;
+      padding: 14px 32px;
+      margin: 0;
+    }
+
+    .value-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .value-row-name {
+      font-size: 14px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .value-row-name::before {
+      content: '✓';
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .bonus-group .value-row-name::before {
+      content: '+';
+      color: var(--yellow);
+      font-size: 15px;
+    }
+
+
+    .value-row-price {
+      font-size: 12px;
+      color: var(--grey);
+      flex-shrink: 0;
+      white-space: nowrap;
+      font-style: italic;
+    }
+
+    /* Bonus group (value card summary) */
+    .bonus-group { border-top: 1px solid var(--border); }
+
+    .bonus-group-header {
+      padding: 10px 32px 6px;
+      text-align: center;
+    }
+
+    .bonus-group-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    .bonus-group-header::before,
+    .bonus-group-header::after { display: none; }
+
+    /* Feature cards grid */
+    .features-grid {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .feature-card {
+      flex: 1;
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 28px 16px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feature-card-icon {
+      width: 60px;
+      height: 60px;
+      background: #EEF1FF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-bottom: 4px;
+    }
+
+    .feature-card-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--black);
+      letter-spacing: 0.5px;
+      line-height: 1.3;
+    }
+
+    .feature-card-desc {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .feature-card-value {
+      font-size: 13px;
+      color: var(--grey);
+      font-style: italic;
+    }
+
+    /* Content box wrapper */
+    .content-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 48px;
+      margin-bottom: 48px;
+    }
+
+    /* Bonuses section divider */
+    .bonuses-divider {
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .bonuses-divider::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .bonuses-divider-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--grey);
+      background: var(--off-white);
+      padding: 0 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bonuses-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 32px;
+      display: block;
+    }
+
+    /* Bonus cards grid */
+    .bonuses-grid {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .bonus-card {
+      flex: 1;
+      background: var(--white);
+      border: 2px solid var(--yellow);
+      padding: 24px 16px 18px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bonus-card-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-bottom: 2px;
+    }
+
+    .bonus-card-tag {
+      font-family: 'Oswald', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--yellow);
+      padding: 2px 8px;
+    }
+
+    .bonus-card-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--black);
+      letter-spacing: 0.5px;
+      line-height: 1.3;
+    }
+
+    .bonus-card-desc {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .bonus-card-value {
+      font-size: 12px;
+      color: var(--grey);
+      font-style: italic;
+    }
+
+    .bonus-card-img {
+      width: calc(100% + 32px);
+      margin: -24px -16px 12px;
+      display: block;
+    }
+
+    /* Offer block wrapper */
+    .offer-block {
+      background: var(--black);
+      padding: 32px 32px 32px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .offer-block-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(48px, 7vw, 80px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--white);
+      letter-spacing: -2px;
+      line-height: 1;
+      text-align: center;
+      padding-bottom: 28px;
+    }
+
+    /* Totals — centered */
+    .value-totals {
+      padding: 14px 32px 18px;
+      text-align: center;
+    }
+
+    .value-totals-left { display: inline-block; text-align: left; }
+
+    .value-total-row {
+      font-size: 13px;
+      color: var(--grey);
+      margin-bottom: 3px;
+    }
+
+    .value-total-row:last-child { margin-bottom: 0; }
+
+    .value-total-row s { color: var(--grey); }
+
+    /* Price + CTA */
+    .value-cta-block {
+      padding: 20px 32px 32px;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .price-label {
+      font-size: 11px;
+      color: var(--grey);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .price-now {
+      font-family: 'Oswald', sans-serif;
+      font-size: 80px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    .price-deadline {
+      font-size: 11px;
+      color: var(--grey);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .price-comparison {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      justify-content: center;
+      margin: 8px 0;
+    }
+
+    .price-regular {
+      font-size: 28px;
+      color: var(--grey);
+      text-decoration: line-through;
+      font-weight: 400;
+    }
+
+    .price-now {
+      font-family: 'Oswald', sans-serif;
+      font-size: 80px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    .price-benefit {
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 400;
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+
+    .price-urgency {
+      font-size: 12px;
+      color: var(--grey);
+      font-weight: 600;
+      margin-top: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .inside-cta-btn {
+      display: inline-block;
+      margin-top: 14px;
+      background: var(--red);
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 14px 32px;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 2px;
+      transition: background 0.18s;
+      white-space: nowrap;
+    }
+
+    .inside-cta-btn:hover { background: var(--red-dark); }
+
+    .guarantee-note {
+      font-size: 12px;
+      color: var(--grey);
+      text-align: center;
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+
+    .value-row-note {
+      font-size: 12px;
+      color: var(--grey);
+      font-style: italic;
+      padding: 2px 0 10px;
+      list-style: none;
+    }
+
+    .cta-guarantee {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      margin-top: 16px;
+    }
+
+    /* ============ PROGRESSION ============ */
+    .progression-section {
+      background: var(--off-white);
+      padding: 88px 64px;
+    }
+
+    .progression-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .progression-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--black);
+      letter-spacing: -0.5px;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .progression-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      padding-left: 60px;
+    }
+
+    .progression-list::before {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .progression-week {
+      margin-bottom: 56px;
+      position: relative;
+    }
+
+    .progression-week:last-child { margin-bottom: 0; }
+
+    .progression-week::before {
+      content: '';
+      position: absolute;
+      left: -60px;
+      top: 4px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--red);
+      border: 3px solid var(--off-white);
+      box-shadow: 0 0 0 2px var(--border);
+    }
+
+    .progression-week:nth-child(2)::before { background: var(--yellow); }
+    .progression-week:nth-child(3)::before { background: var(--blue); }
+    .progression-week:nth-child(4)::before { background: var(--red); }
+    .progression-week:nth-child(5)::before { background: var(--yellow); }
+
+    .progression-week-content {
+      all: unset;
+      display: contents;
+    }
+
+    .progression-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .progression-week-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .progression-content {
+      font-size: 16px;
+      color: var(--text);
+      line-height: 1.65;
+      max-width: 640px;
+    }
+
+    .progression-content p {
+      margin: 0 0 8px 0;
+    }
+
+    .progression-content p:last-child { margin-bottom: 0; }
+
+    .workshop-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--grey);
+      display: inline;
+    }
+
+    .workshop-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 16px;
+    }
+
+    .workshop-card {
+      border: 1px solid var(--border);
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .workshop-card-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .workshop-card-text {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .workshop-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    /* ============ BIO ============ */
+    .bio-section {
+      background: var(--white);
+      padding: 88px 64px;
+      border-top: 1px solid var(--border);
+    }
+
+    .bio-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      gap: 56px;
+      align-items: stretch;
+    }
+
+    .bio-photo {
+      width: 480px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .bio-photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .bio-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .bio-content .label { margin-bottom: 16px; }
+
+    .bio-content p {
+      font-size: 17px;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .bio-content p:last-of-type { margin-bottom: 0; }
+
+    .bio-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-block {}
+
+    .stat-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--grey);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ============ TESTIMONIAL ============ */
+    .testimonial-section {
+      background: var(--black);
+      padding: 80px 64px;
+    }
+
+    .testimonial-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .testimonial-lead {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 40px;
+      display: block;
+    }
+
+    .testimonial-grid {
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+    }
+
+    .testimonial-card {
+      flex: 1;
+      min-width: 0;
+      padding: 24px 20px 20px;
+    }
+
+    .testimonial-text {
+      font-size: clamp(17px, 1.8vw, 22px);
+      color: var(--white);
+      line-height: 1.65;
+      font-style: italic;
+      font-weight: 400;
+      margin-bottom: 20px;
+      position: relative;
+      padding-top: 40px;
+    }
+
+    .testimonial-text::before {
+      content: '\201C';
+      position: absolute;
+      top: -8px;
+      left: -4px;
+      font-size: 72px;
+      font-style: normal;
+      line-height: 1;
+      color: var(--yellow);
+      font-family: 'Georgia', serif;
+    }
+
+    .testimonial-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ============ CTA ============ */
+    .cta-section {
+      background: var(--black);
+      padding: 100px 64px;
+      text-align: center;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .cta-section h2 {
+      font-size: clamp(32px, 5vw, 60px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -1.5px;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.3;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-section h2 .accent { color: var(--yellow); }
+
+    .cta-note {
+      font-size: 14px;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 40px;
+      margin-top: 12px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 20px 56px;
+      background: var(--red);
+      color: #fff;
+      border-radius: 2px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      transition: background 0.18s;
+    }
+
+    .cta-btn:hover { background: var(--red-dark); }
+
+    /* ============ FAQ ============ */
+    .faq-section {
+      background: var(--off-white);
+      padding: 88px 64px;
+    }
+
+    .faq-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .faq-inner .label { margin-bottom: 40px; }
+
+    .faq-list { border-top: 1px solid var(--border); }
+
+    .faq-item { border-bottom: 1px solid var(--border); }
+
+    .faq-q {
+      padding: 24px 0;
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--black);
+      text-transform: uppercase;
+      letter-spacing: -0.2px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      user-select: none;
+    }
+
+    .faq-q::after {
+      content: '+';
+      font-size: 28px;
+      color: var(--blue);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+      line-height: 1;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+    }
+
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+
+    .faq-a {
+      display: none;
+      padding-bottom: 24px;
+      font-size: 16px;
+      color: var(--grey);
+      line-height: 1.75;
+      max-width: 640px;
+    }
+
+    .faq-item.open .faq-a { display: block; }
+
+    /* ============ FOOTER ============ */
+    footer {
+      background: var(--black);
+      padding: 32px 64px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.2);
+    }
+
+    footer a { color: rgba(255,255,255,0.2); text-decoration: none; }
+    footer a:hover { color: rgba(255,255,255,0.5); }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 768px) {
+      .hero,
+      .inside-section,
+      .bio-section,
+      .testimonial-section,
+      .cta-section,
+      .faq-section,
+      .progression-section { padding: 56px 24px; }
+
+      .hero-inner { padding: 56px 24px; }
+      .hero-copy { max-width: 100%; }
+      .hero-bg { background-size: 220%; background-position: 62% 45%; }
+
+      .course-mockup { flex-direction: column; min-height: auto; }
+      .mockup-player { flex: 0 0 auto; padding: 32px; min-height: 140px; }
+      .value-card { max-width: 100%; }
+      .content-box { padding: 24px; }
+      .value-cta-block { padding: 20px 24px 28px; }
+      .price-now { font-size: 64px; letter-spacing: -2px; }
+
+      .bio-inner { flex-direction: column; gap: 32px; align-items: center; }
+      .bio-photo { width: 100%; max-width: 360px; }
+      .bio-photo img { height: auto; object-fit: contain; }
+
+      .outcomes-list li { flex-direction: column; gap: 8px; }
+      .features-grid, .bonuses-grid { flex-direction: column; }
+      .testimonial-grid { flex-direction: column; }
+      .progression-list { padding-left: 40px; }
+      .progression-list::before { left: 9px; }
+      .progression-week::before { left: -48px; }
+
+      .progression-label { font-size: 11px; }
+      .progression-week-title { font-size: clamp(18px, 2vw, 24px); }
+      .progression-content { font-size: 14px; }
+
+      .workshop-grid { grid-template-columns: 1fr; gap: 16px; }
+      .workshop-card { padding: 16px; }
+
+      .bonus-card-img { width: 45% !important; margin-left: auto !important; margin-right: auto !important; }
+
+      .bonuses-headline { margin-bottom: 20px; font-size: 12px; }
+
+      .inside-headline { font-size: clamp(32px, 5vw, 48px); }
+      .cta-section h2 { font-size: clamp(24px, 4vw, 48px); }
+
+      footer { padding: 24px; }
+    }
+
+    @media (min-width: 1200px) {
+      .hero-tagline { font-size: 56px; }
+      .inside-headline { font-size: 72px; }
+      .cta-section h2 { font-size: 64px; }
+      .outcomes-headline { font-size: 48px; }
+      .progression-title { font-size: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="hero-tagline">YOU FELT WHAT ONE WORKSHOP DOES.<br>FOUR MORE AND YOU <span class="accent">CREATE ON EVERY SONG</span>.</p>
+        <p class="hero-sub">In 5 weeks you'll know all 15 shapes.</p>
+        <p class="hero-sub">Walk into every session with something to say.</p>
+        <p class="hero-sub">No more roots and fifths. Create your own<br>bass lines on the spot.</p>
+        <a href="https://play-bass.pro/checkout-page-bass-line-lab" class="hero-btn">Unlock the Full Program</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial-section">
+    <div class="testimonial-inner">
+      <span class="testimonial-lead">What players are saying</span>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <img src="steve.png" alt="Steve Q." class="testimonial-avatar">
+          <p class="testimonial-text">I've spent tons of time with bass subscription websites, YouTube and books over the last decade and this has already been the most impactful of any of them.</p>
+          <p class="testimonial-name">Steve Q.</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="martin.jpg" alt="Martin A." class="testimonial-avatar">
+          <p class="testimonial-text">My playing became stagnant and now I feel like I have a new lease of life on my bass.</p>
+          <p class="testimonial-name">Martin A.</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="Adam.png" alt="Adam D." class="testimonial-avatar">
+          <p class="testimonial-text">I have never thought that I could improvise after 3 days.</p>
+          <p class="testimonial-name">Adam D.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRESSION -->
+  <section class="progression-section">
+    <div class="progression-inner">
+      <h2 class="progression-title">Week by Week: Your 15 Shapes</h2>
+      <div class="progression-list">
+        <div class="progression-week">
+          <div class="progression-week-content">
+            <span class="progression-label">Level 1</span>
+            <span style="font-size: 13px; color: var(--grey); display: block; margin-bottom: 8px;">✓ You are here</span>
+            <h3 class="progression-week-title">You just felt it.</h3>
+            <div class="progression-content">
+              <p>Five shapes. The foundation.</p>
+              <p>Get all 5 exercises when you enroll.</p>
+            </div>
+          </div>
+        </div>
+        <div class="progression-week">
+          <div class="progression-week-content">
+            <span class="progression-label">Level 2</span>
+            <h3 class="progression-week-title">Minor Scales in Motion</h3>
+            <div class="workshop-grid">
+              <div class="workshop-card">
+                <span class="workshop-card-label">Rhythm Workshop</span>
+                <p class="workshop-card-text">Shapes 6–10 introduced.</p>
+              </div>
+              <div class="workshop-card">
+                <span class="workshop-card-label">Bass Line Workshop</span>
+                <p class="workshop-card-text">Two types of minor scales that work over most minor chords.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="progression-week">
+          <div class="progression-week-content">
+            <span class="progression-label">Level 3</span>
+            <h3 class="progression-week-title">Unlocking Blues & Funk</h3>
+            <div class="workshop-grid">
+              <div class="workshop-card">
+                <span class="workshop-card-label">Rhythm Workshop</span>
+                <p class="workshop-card-text">Shapes 11–13 added.</p>
+              </div>
+              <div class="workshop-card">
+                <span class="workshop-card-label">Bass Line Workshop</span>
+                <p class="workshop-card-text">Dominant chords unlock the sounds of blues and funk.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="progression-week">
+          <div class="progression-week-content">
+            <span class="progression-label">Level 4</span>
+            <h3 class="progression-week-title">Jazz Sounds</h3>
+            <div class="workshop-grid">
+              <div class="workshop-card">
+                <span class="workshop-card-label">Rhythm Workshop</span>
+                <p class="workshop-card-text">Shapes 14–15 introduced.</p>
+              </div>
+              <div class="workshop-card">
+                <span class="workshop-card-label">Bass Line Workshop</span>
+                <p class="workshop-card-text">Chord progressions that unlock jazz harmony.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="progression-week">
+          <div class="progression-week-content">
+            <span class="progression-label">Level 5</span>
+            <h3 class="progression-week-title">Modern Jazz & Fusion</h3>
+            <div class="workshop-grid">
+              <div class="workshop-card">
+                <span class="workshop-card-label">Rhythm Workshop</span>
+                <p class="workshop-card-text">Master all 15 shapes.</p>
+              </div>
+              <div class="workshop-card">
+                <span class="workshop-card-label">Bass Line Workshop</span>
+                <p class="workshop-card-text">Sus4 and sus2 progressions unlock modern jazz and fusion sounds.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section class="inside-section">
+    <div class="inside-content">
+
+      <span class="label">What's Inside</span>
+
+      <!-- Content box: mockup + feature cards -->
+      <div class="content-box">
+        <!-- Course mockup -->
+        <img src="bass%20line%20lab%20mockup%20.png" alt="Bass Line Lab course contents" style="width:100%; display:block; margin-bottom:48px;">
+
+        <!-- Feature cards -->
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <div class="feature-card-icon">
+              <svg width="30" height="30" viewBox="0 0 32 32" fill="none"><rect x="1" y="18" width="5" height="13" rx="1" fill="#3B5BFF"/><rect x="8" y="10" width="5" height="21" rx="1" fill="#3B5BFF"/><rect x="15" y="6" width="5" height="25" rx="1" fill="#3B5BFF"/><rect x="22" y="12" width="5" height="19" rx="1" fill="#3B5BFF"/></svg>
+            </div>
+            <h3 class="feature-card-name">5 Rhythm Workshops</h3>
+            <p class="feature-card-desc">Learn and really understand 16th notes. Get this right and you'll never fall back to roots and fifths again.</p>
+            <span class="feature-card-value">value $149</span>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-icon">
+              <svg width="30" height="30" viewBox="0 0 32 32" fill="none"><ellipse cx="10" cy="26" rx="7" ry="5" fill="#3B5BFF"/><rect x="16" y="4" width="3" height="22" fill="#3B5BFF"/><path d="M19 4L28 8V14L19 10V4Z" fill="#3B5BFF"/></svg>
+            </div>
+            <h3 class="feature-card-name">5 Bass Line Creation Workshops</h3>
+            <p class="feature-card-desc">The application. You take the rhythm foundation and build real bass lines from it, using the 15 shapes across real musical situations.</p>
+            <span class="feature-card-value">value $149</span>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-icon">
+              <svg width="30" height="30" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="#3B5BFF" stroke-width="2.5"/><path d="M13 10L23 16L13 22V10Z" fill="#3B5BFF"/></svg>
+            </div>
+            <h3 class="feature-card-name">20 Video Exercises + PDF Worksheets</h3>
+            <p class="feature-card-desc">Short focused drills that lock in each shape. You'll get also PDFs, for maximum flexibility.</p>
+            <span class="feature-card-value">value $99</span>
+          </div>
+
+        </div>
+      </div>
+
+      <span class="bonuses-headline">Bonuses</span>
+
+      <div class="bonuses-grid">
+
+        <div class="bonus-card">
+          <img src="backing%20tracks%20bonus%20.png" alt="5 Backing Tracks" class="bonus-card-img" style="width:60%;margin-left:auto;margin-right:auto;">
+          <span class="bonus-card-tag">Bonus</span>
+          <h3 class="bonus-card-name">5 Backing Tracks</h3>
+          <p class="bonus-card-desc">Real backing tracks to practice over. Not a metronome. One per workshop so you apply each new shape in context.</p>
+          <span class="bonus-card-value">value $29</span>
+        </div>
+
+        <div class="bonus-card">
+          <img src="bonus%20workshop1.png" alt="Play Over a Real Song Workshop" class="bonus-card-img">
+          <span class="bonus-card-tag">Bonus</span>
+          <h3 class="bonus-card-name">Play Over a Real Song Workshop</h3>
+          <p class="bonus-card-desc">Take everything you've built in Bass Line Lab and apply it to a real song. Groove, note choice, chord movement. All of it, in one playing situation.</p>
+          <span class="bonus-card-value">value $49</span>
+        </div>
+
+        <div class="bonus-card">
+          <img src="bonus.%20essential%20rhythms%20.png" alt="Essential Rhythms Mini Course" class="bonus-card-img">
+          <span class="bonus-card-tag">Bonus</span>
+          <h3 class="bonus-card-name">Essential Rhythms Mini Course</h3>
+          <p class="bonus-card-desc">Three focused lessons that build your rhythmic foundation from the ground up, so you don't have any gaps.</p>
+          <span class="bonus-card-value">value $49</span>
+        </div>
+
+      </div>
+
+      <!-- Offer block -->
+      <div class="offer-block">
+        <h2 class="offer-block-title">BASS <span style="color:var(--blue)">LINE</span> LAB</h2>
+        <div class="value-card">
+        <div class="value-card-header">
+          <span class="value-card-header-title">Everything You Get</span>
+        </div>
+        <ul class="value-rows">
+          <li class="value-row">
+            <span class="value-row-name">5 Rhythm Workshops</span>
+            <span class="value-row-price">value $149</span>
+          </li>
+          <li class="value-row">
+            <span class="value-row-name">5 Bass Line Creation Workshops</span>
+            <span class="value-row-price">value $149</span>
+          </li>
+<li class="value-row">
+            <span class="value-row-name">20 Video Exercises + PDF Worksheets</span>
+            <span class="value-row-price">value $99</span>
+          </li>
+        </ul>
+        <div class="bonus-group">
+          <div class="bonus-group-header">
+            <span class="bonus-group-label">Bonuses</span>
+          </div>
+          <ul class="value-rows">
+            <li class="value-row">
+              <span class="value-row-name">5 Backing Tracks</span>
+              <span class="value-row-price">value $29</span>
+            </li>
+            <li class="value-row">
+              <span class="value-row-name">Play Over a Real Song Workshop</span>
+              <span class="value-row-price">value $49</span>
+            </li>
+            <li class="value-row">
+              <span class="value-row-name">Essential Rhythms Mini Course</span>
+              <span class="value-row-price">value $49</span>
+            </li>
+          </ul>
+        </div>
+        <div class="value-totals">
+          <div class="value-totals-left">
+            <div class="value-total-row">Total value: $564</div>
+            <div class="value-total-row">Regular price: <s>$197</s></div>
+          </div>
+        </div>
+        <div class="value-cta-block">
+          <p class="price-label">Lock in now</p>
+          <span class="price-now">$67</span>
+          <p class="price-benefit">Lifetime access</p>
+          <p class="price-urgency">Price goes to $97 August 23</p>
+          <a href="https://play-bass.pro/checkout-page-bass-line-lab" class="inside-cta-btn">Get Instant Access</a>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="cta">
+    <h2>Five weeks. 15 shapes. <span class="accent">Time to create on every song.</span></h2>
+    <p class="cta-note">$67 now. Lifetime access. Recorded, watch anytime.</p>
+    <a href="https://play-bass.pro/checkout-page-bass-line-lab" class="cta-btn">Get Instant Access</a>
+    <p class="cta-note" style="margin-top: 20px; font-size: 12px;">Price goes to $97 August 23</p>
+  </section>
+
+  <!-- BIO -->
+  <section class="bio-section">
+    <div class="bio-inner">
+      <div class="bio-photo">
+        <img src="ran2.png" alt="Ran Levi">
+      </div>
+      <div class="bio-content">
+        <span class="label">Ran Levi</span>
+        <p>You know me a little now. You've seen how I teach. No theory sitting on its own. Every shape straight into something you can play.</p>
+        <p>I've been doing this for 25 years. The thing that keeps me going is watching a player stop guessing and start creating. That's what this is built for.</p>
+        <div class="bio-stats">
+          <div class="stat-block">
+            <div class="stat-num">1,000+</div>
+            <div class="stat-label">students</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-num">300K+</div>
+            <div class="stat-label">followers</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-num">25 yrs</div>
+            <div class="stat-label">teaching</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="faq-inner">
+      <span class="label">FAQ</span>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">What if I have questions along the way?</div>
+          <div class="faq-a">Write to me directly. I'll work through it with you.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">I'm not sure I have enough time.</div>
+          <div class="faq-a">The ideal is twice a week, 45 minutes each: watch the lesson, then practice it. If you have more time, use it. If you have less, you get lifetime access and go at your own pace.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What genre is this for?</div>
+          <div class="faq-a">All of them. The shapes work in rock, soul, gospel, jazz. Once you know them, you apply them anywhere.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">I've been playing for years and I'm still stuck. Will this actually help?</div>
+          <div class="faq-a">That's exactly who this is for. Not beginners. Players who put in the time and still hit a ceiling. 16th notes are what's missing. Once you have them, the ceiling goes.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Am I at the right level for this?</div>
+          <div class="faq-a">This is for bass players who already know the basics. I included the Essential Rhythms Mini Course as a bonus, so if you're a beginner and enthusiastic, start there and work your way up.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Ran Levi &nbsp;·&nbsp; <a href="https://play-bass.pro">play-bass.pro</a> &nbsp;·&nbsp; <a href="mailto:info@play-bass.pro">info@play-bass.pro</a></p>
+    <p style="margin-top:10px;"><a href="https://play-bass.pro/terms-of-use-page">Terms of Use</a> &nbsp;·&nbsp; <a href="https://play-bass.pro/impressum">Impressum</a></p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
