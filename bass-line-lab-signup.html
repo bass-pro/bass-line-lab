@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bass Line Lab: Free Workshop - Create Your Own Bass Lines</title>
+  <meta name="description" content="Free workshop: Learn to create your own bass lines by the end of this session. No experience needed. Get instant access.">
+  <meta name="keywords" content="bass lessons, bass workshop, learn bass, bass line creation, improvisation">
+  <meta name="author" content="Ran Levi">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pages.play-bass.pro/bass-line-lab-signup.html">
+  <meta property="og:title" content="Bass Line Lab: Free Workshop">
+  <meta property="og:description" content="Learn to create your own bass lines. Free workshop, no credit card needed.">
+  <meta property="og:image" content="https://pages.play-bass.pro/photo-3.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="https://pages.play-bass.pro/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0J701CP2T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S0J701CP2T');
+  </script>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1922108691867647');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1922108691867647&ev=ViewContent&noscript=1" /></noscript>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --white: #FFFFFF;
+      --black: #0D0D0D;
+      --text: #1A1A1A;
+      --grey: #8A8A8A;
+      --border: #E0E0E0;
+      --blue: #3B5BFF;
+      --red: #FF4400;
+      --red-dark: #E03A00;
+      --yellow: #FFD600;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--text);
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+    }
+
+    h1, h2, h3 { font-family: 'Oswald', sans-serif; }
+
+    /* ============ HERO ============ */
+    .hero {
+      background: var(--black);
+      position: relative;
+      min-height: auto;
+      display: flex;
+      align-items: flex-start;
+      padding-bottom: 40px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('photo-3.jpg');
+      background-repeat: no-repeat;
+      background-position: center 30%;
+      background-size: cover;
+      opacity: 0.4;
+      z-index: 0;
+    }
+
+    .hero-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px 48px 0;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .brand-mark {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 48px;
+    }
+
+    .brand-mark .bm-bass {
+      display: inline-block;
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 4px;
+    }
+
+    .brand-mark .bm-line {
+      color: var(--blue);
+    }
+
+    .hero-headline {
+      font-size: clamp(36px, 5vw, 54px);
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -1.5px;
+      color: var(--white);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      order: 1;
+    }
+
+    .hero-split {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .hero-copy {
+      flex: 1;
+      min-width: 0;
+      padding-bottom: 0;
+      order: 2;
+    }
+
+    .hero-headline .accent { color: var(--red); }
+
+    .hero-pain {
+      font-family: 'Lato', sans-serif;
+      font-size: clamp(20px, 2.8vw, 28px);
+      font-weight: 400;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.65;
+      margin-bottom: 32px;
+      letter-spacing: -0.3px;
+    }
+
+    .hero-pain span {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .hero-pain span:last-child { margin-bottom: 0; }
+
+    .hero-bridge {
+      margin-top: 16px;
+      margin-bottom: 56px;
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(16px, 2.2vw, 22px);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .hero-bridge .accent {
+      color: var(--red);
+    }
+
+    .hero-photo {
+      display: none;
+    }
+
+    /* ============ FORM SECTION ============ */
+    .form-section {
+      background: var(--white);
+      padding: 12px 32px 16px;
+    }
+
+    .form-inner {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .form-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 4px;
+      text-align: center;
+    }
+
+    .form-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 6px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: var(--text);
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.18s;
+    }
+
+    .form-input::placeholder { color: var(--grey); }
+    .form-input:focus { border-color: var(--text); }
+
+    .form-btn {
+      display: block;
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      border-radius: 2px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.18s;
+    }
+
+    .form-btn:hover { background: var(--red-dark); }
+
+    .form-note {
+      font-size: 11px;
+      color: var(--grey);
+      text-align: center;
+      margin-top: 4px;
+      letter-spacing: 0.2px;
+    }
+
+    /* ============ CREDIBILITY ============ */
+    .credibility {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--grey);
+      letter-spacing: 0.2px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .credibility strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      text-align: center;
+      padding: 24px 32px;
+      font-size: 13px;
+      color: var(--grey);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--grey); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 640px) {
+      .hero {
+        min-height: auto;
+        padding-bottom: 20px;
+      }
+
+      .hero::before {
+        opacity: 0.25;
+      }
+
+      .hero-inner { padding: 14px 12px 0; }
+      .form-section { padding: 8px 12px 12px; }
+
+      .brand-mark { margin-bottom: 16px; font-size: 11px; }
+
+      .hero-headline {
+        font-size: clamp(28px, 7vw, 36px);
+        margin-bottom: 16px;
+      }
+
+      .hero-split { gap: 0; }
+
+      .hero-copy { padding-bottom: 0; }
+
+      .hero-pain { font-size: 17px; margin-bottom: 12px; }
+
+      .hero-pain span { margin-bottom: 6px; }
+
+      .hero-bridge { margin-top: 12px; margin-bottom: 24px; font-size: 13px; }
+
+      .form-inner { max-width: 100%; }
+
+      .form-input { padding: 12px 12px; font-size: 15px; }
+
+      .form-btn { font-size: 15px; padding: 12px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="brand-mark"><span class="bm-bass">Bass</span> <span class="bm-line">Line</span> Lab</span>
+      <h1 class="hero-headline">Create your own<br><span class="accent">bass line</span><br>by the end of<br>this workshop.</h1>
+      <div class="hero-split">
+        <div class="hero-copy">
+          <div class="hero-pain">
+            <span>You've been playing for a while.</span>
+            <span>But when it's your time to create,</span>
+            <span>nothing comes.</span>
+            <span>You fall back to roots.</span>
+          </div>
+          <p class="hero-bridge">This <span class="accent">workshop</span> changes that.</p>
+        </div>
+        <div class="hero-photo">
+          <img src="ran2.png" alt="Ran Levi">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM - KIT EMBED -->
+  <section class="form-section">
+    <div class="form-inner">
+      <script async data-uid="d3ad29e605" src="https://bass-pro.kit.com/d3ad29e605/index.js"></script>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN HERO TRIGGER -->
+  <script src="https://automatehero.io/api/hero/RVVLYm85Q0FXZz09"></script>
+
+  <footer>
+    <p><a href="mailto:info@play-bass.pro">info@play-bass.pro</a></p>
+  </footer>
+
+</body>
+</html>
